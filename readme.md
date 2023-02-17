@@ -1,6 +1,7 @@
 # Integración de calendly con react.js
 
-Utilizando la librería react-calendly se logro insertar el widget de calendly a una pagina de react.
+> [Ejemplo en vivo](https://calendly-react-integration.vercel.app/)
+> Utilizando la librería react-calendly se logro insertar el widget de calendly a una pagina de react.
 
 > https://www.npmjs.com/package/react-calendly
 
@@ -33,7 +34,7 @@ export default App;
 
 ### Observaciones
 
-Poca a ninguna edición de estilo mas alla del tamaño, a pesar que la documentación hace referencia a personalización, tambien mencionan que ciertos aspectos de la personalización van a ser posibles dependiendo del plan que el usuario tenga dentro de calendly
+Poca a ninguna edición de estilo mas alla del tamaño y color de fondo, a pesar que la documentación hace referencia a personalización, tambien mencionan que ciertos aspectos de la personalización van a ser posibles dependiendo del plan que el usuario tenga dentro de calendly
 <img src="./proplan.png" />
 
 Dicho esto, mostramos 3 versiones del inline con distintos tamaños, y aplicando distintas propiedades, aunque no tiene efecto
