@@ -1,68 +1,55 @@
-# ⚛️ React - Chakra-UI Template 🌩️
+# Integración de calendly con react.js
 
-Project based on a React App initialized with [ViteJS](https://vitejs.dev/) it features a basic theme created with [Chakra-UI](https://chakra-ui.com/) using [context-api](https://reactjs.org/) to handle the theme state(Dark Theme vs Light Theme).
+Utilizando la librería react-calendly se logro insertar el widget de calendly a una pagina de react.
 
-## 🌐 Global imports
+> https://www.npmjs.com/package/react-calendly
 
-> **This import format will work for any folder insider src**
+- [Inline](#inline-calendly-widget)
+- [Popup](#popup-widget)
+- [CTA](#cta-widget)
 
-Global imports are defined using vite.config.js and jsonconfig.json. It is a basic implementation which can be upgraded orreplaced.
+## Inline Calendly Widget
 
-```js
-import { SomeContext } from "@/context/SomeContext.jsx";
-import { CustomButton } from "@/components/atoms/buttons";
-import useFunctionality from "@/hooks/useFunctionality.jsx";
-```
+> [ejemplo](./src/components/Inline.jsx)
 
-## 📁 Components.
+La librería permite utilizar el widget Inline para mostrar un calendario en la pagina.
 
-**General components**, **_src/components_**, are reusable and global components divided on atoms, molecules and organisms.
+<img src="./inline.png" alt="calendly-inline" />
 
 ```
-Atoms -> Small 'stand alone' Component
-Molecules -> Medium components with some atoms
-Organisms -> Large components with multiple molecules and atoms
-```
+import React from "react";
+import { InlineWidget } from "react-calendly";
 
-**Views components**, **_views/some_view/components_**, are view-specific components which can be reused inside the view
-
-## 💻 State management
-
-> 🏗️ In progress
-
-State is managed using ContextApi.
-
-A flux-like is being used so far. With a store, containing all the states, and actions, containing all the reducer functions.
-
-```js
-import useStore from "@/hooks/useStore";
-
-const Component = () => {
-  const { store, actions } = useStore();
-
-  const handleThing = () => {
-    const reduced = actions.thingReducer();
-    return reduced;
-  };
-
-  return <>{store.data}</>;
+const App = () => {
+  return (
+    <div className="App">
+      <InlineWidget url="https://calendly.com/your_scheduling_page" />
+    </div>
+  );
 };
 
-export default Component;
+export default App;
 ```
 
-## 🎉 Getting started
+### Observaciones
 
-After cloning the repository you can get started using
+Poca a ninguna edición de estilo mas alla del tamaño, a pesar que la documentación hace referencia a personalización, tambien mencionan que ciertos aspectos de la personalización van a ser posibles dependiendo del plan que el usuario tenga dentro de calendly
+<img src="./proplan.png" />
 
-```sh
-yarn install
-# or
-npm install
+Dicho esto, mostramos 3 versiones del inline con distintos tamaños, y aplicando distintas propiedades, aunque no tiene efecto
 
-# And
+## Popup Widget
 
-yarn dev
-#or
-npm run start
-```
+> [ejemplo](./src/components/Popup.jsx)
+
+La libreria tambien ofrece un Pop Up con un FAB(Floating action Button). El color del boton y de las letras son modificables
+
+<img src="./popup.png" >
+
+## Cta Widget
+
+> [ejemplo](./src/components/Cta.jsx)
+
+Por ultimo nos habilita una opcion de utilizar un boton CTA para activar un modal/popup de calendly
+
+<img src="cta.png" />

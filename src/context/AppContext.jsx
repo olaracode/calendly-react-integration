@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 export const AppContext = createContext({});
 
 const AppProvider = ({ children }) => {
-  const [theme, setTheme] = useState(true);
+  const [theme, setTheme] = useState(false);
 
   const handleTheme = () => {
     setTheme(!theme);
